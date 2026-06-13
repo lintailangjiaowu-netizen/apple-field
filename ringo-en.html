@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>療育ルーム りんご園（本院） | 堺市北区 児童発達支援</title>
+  <meta name="description" content="堺市北区百舌鳥陵南町の療育ルームりんご園。モンテッソーリ・発語リズム・ピアノ療育で未就学児の発達をサポートします。">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: #333; line-height: 1.7; background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    :root {
+      --red: #e8402a; --red-lt: #fde8e5;
+      --green: #4caf50; --green-lt: #e8f5e9;
+      --orange: #f7941d;
+      --muted: #666; --border: #e8e8e8;
+      --radius: 12px; --shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 11px 24px; border-radius: 50px; font-size: .9rem; font-weight: 600; cursor: pointer; transition: all .2s; border: none; }
+    .btn-primary { background: var(--red); color: #fff; }
+    .btn-primary:hover { background: #c9341f; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(232,64,42,.35); }
+    .btn-outline { background: transparent; color: var(--red); border: 2px solid var(--red); }
+    .btn-outline:hover { background: var(--red-lt); }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 66px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; font-weight: 700; color: var(--red); }
+    .logo-icon { width: 36px; height: 36px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #fff; }
+    .logo-back { font-size: .8rem; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+    .logo-back:hover { color: var(--red); }
+    nav { display: flex; align-items: center; gap: 24px; font-size: .88rem; }
+    nav a { color: var(--muted); font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--red); }
+
+    /* Breadcrumb */
+    .breadcrumb { background: #fafafa; padding: 12px 24px; font-size: .82rem; color: var(--muted); }
+    .breadcrumb-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 6px; align-items: center; }
+    .breadcrumb a { color: var(--red); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .facility-hero { background: linear-gradient(135deg, #fff8f7 0%, #ffe8e5 60%, #fff3e0 100%); padding: 56px 24px; }
+    .facility-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: center; }
+    .badge { display: inline-block; background: var(--green); color: #fff; font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; margin-bottom: 12px; }
+    .facility-hero h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 14px; }
+    .facility-hero h1 em { color: var(--red); font-style: normal; }
+    .facility-hero p { color: var(--muted); margin-bottom: 24px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-visual {
+      background: linear-gradient(135deg, #fde8e5, #ffe0d0);
+      border-radius: 20px; height: 260px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 6rem;
+    }
+
+    /* Info card */
+    .info-card { background: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); margin-top: 24px; }
+    .info-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: .9rem; }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { font-weight: 700; min-width: 90px; color: var(--muted); flex-shrink: 0; font-size: .82rem; }
+    .info-value { color: var(--muted); }
+
+    /* Section */
+    section { padding: 64px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .1em; padding: 3px 12px; border-radius: 50px; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 800; margin-bottom: 12px; }
+    .section-lead { color: var(--muted); margin-bottom: 40px; }
+
+    /* Therapies */
+    .therapies-bg { background: #fafafa; }
+    .therapy-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .therapy-card { background: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); border-left: 4px solid transparent; }
+    .therapy-card:nth-child(1) { border-left-color: var(--red); }
+    .therapy-card:nth-child(2) { border-left-color: var(--green); }
+    .therapy-card:nth-child(3) { border-left-color: var(--orange); }
+    .therapy-card .t-icon { font-size: 2rem; margin-bottom: 14px; }
+    .therapy-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .therapy-card p { font-size: .88rem; color: var(--muted); }
+
+    /* Programs */
+    .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .program-card { background: #fff; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px 20px; text-align: center; transition: border-color .2s, transform .2s; }
+    .program-card:hover { border-color: var(--red); transform: translateY(-3px); }
+    .program-card .p-icon { font-size: 2rem; margin-bottom: 10px; }
+    .program-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+    .program-card p { font-size: .82rem; color: var(--muted); }
+    .time-badge { display: inline-block; background: var(--red-lt); color: var(--red); font-size: .75rem; font-weight: 700; padding: 2px 10px; border-radius: 50px; margin-top: 8px; }
+
+    /* Schedule */
+    .schedule-bg { background: linear-gradient(135deg, #fff8f7, #f1f8e9); }
+    .schedule-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .schedule-table th { background: var(--red); color: #fff; padding: 12px 16px; text-align: center; }
+    .schedule-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); text-align: center; }
+    .schedule-table tr:nth-child(even) td { background: #fafafa; }
+    .avail { color: var(--green); font-weight: 700; }
+    .unavail { color: #ccc; }
+
+    /* Staff */
+    .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .staff-card { background: #fff; border-radius: var(--radius); padding: 24px 20px; text-align: center; box-shadow: var(--shadow); }
+    .staff-avatar { width: 72px; height: 72px; background: var(--red-lt); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 14px; }
+    .staff-name { font-weight: 700; margin-bottom: 4px; }
+    .staff-role { font-size: .8rem; color: var(--muted); }
+    .staff-tag { display: inline-block; font-size: .72rem; background: #f0f0f0; color: #555; padding: 2px 8px; border-radius: 50px; margin-top: 8px; }
+
+    /* Map */
+    .map-container { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .map-container iframe { display: block; }
+
+    /* Access */
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .access-info { display: flex; flex-direction: column; gap: 14px; }
+    .access-item { display: flex; gap: 12px; align-items: flex-start; }
+    .access-item .a-icon { width: 36px; height: 36px; background: var(--red-lt); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .access-item h4 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+    .access-item p { font-size: .85rem; color: var(--muted); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .5s, transform .5s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Footer */
+    footer { background: #1a1a1a; color: #ccc; padding: 40px 24px 28px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-logo-sm { color: #fff; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .footer-logo-sm span { width: 28px; height: 28px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: .82rem; color: #888; }
+    .footer-links a:hover { color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .facility-hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { height: 180px; font-size: 4rem; }
+      .access-grid { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🍎</div>
+      療育ルーム りんご園
+    </a>
+    <nav>
+      <a href="#therapy">療育内容</a>
+      <a href="#program">プログラム</a>
+      <a href="#staff">スタッフ</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a href="#contact-cta" class="btn btn-primary">見学を申し込む</a>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">ホーム</a>
+    <span>›</span>
+    <span>施設一覧</span>
+    <span>›</span>
+    <span style="color:#333">療育ルーム りんご園（本院）</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="facility-hero">
+  <div class="facility-hero-inner">
+    <div>
+      <span class="badge">✅ 受付中</span>
+      <h1>療育ルーム<br><em>りんご園</em>（本院）</h1>
+      <p>未就学児のお子さまを対象に、モンテッソーリ療育・発語リズム療育・ピアノ療育の3本柱で、「自分に出来ること」の発見を一緒にサポートします。</p>
+      <div class="hero-actions">
+        <a href="#contact-cta" class="btn btn-primary">🌸 見学・利用申込</a>
+        <a href="tel:0722427208" class="btn btn-outline">📞 072-242-7208</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-visual">🍎</div>
+      <div class="info-card">
+        <div class="info-row">
+          <span class="info-label">住所</span>
+          <span class="info-value">〒591-8034 堺市北区百舌鳥陵南町3丁193-1A</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">電話</span>
+          <span class="info-value"><a href="tel:0722427208" style="color:var(--red)">072-242-7208</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">対象</span>
+          <span class="info-value">未就学児（0〜6歳）</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">指定番号</span>
+          <span class="info-value">2756500027</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">運営</span>
+          <span class="info-value">NPO法人 アップルフィールド</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">開設</span>
+          <span class="info-value">令和4年7月1日</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Therapy -->
+<section class="therapies-bg" id="therapy">
+  <div class="section-inner">
+    <span class="section-tag" style="background:var(--red-lt);color:var(--red)">療育の特長</span>
+    <h2 class="section-title">3つの療育の柱</h2>
+    <p class="section-lead">科学的根拠に基づいた独自の療育メソッドを組み合わせて提供します。</p>
+    <div class="therapy-list reveal">
+      <div class="therapy-card">
+        <div class="t-icon">🎨</div>
+        <h3>モンテッソーリ療育</h3>
+        <p>子どもが本来もつ「自分でやりたい」という意欲を大切に、教具を使った感覚・運動・言語・数・文化の5分野にアプローチ。日常生活の自立へつなげます。</p>
+      </div>
+      <div class="therapy-card">
+        <div class="t-icon">🎵</div>
+        <h3>発語リズム療育</h3>
+        <p>リズムや音楽・身体運動を通じて、発語・発音・コミュニケーション力を楽しみながら育てます。言葉が出にくいお子さまにも効果的なアプローチです。</p>
+      </div>
+      <div class="therapy-card">
+        <div class="t-icon">🎹</div>
+        <h3>ピアノ療育</h3>
+        <p>ピアノ演奏を通じて、集中力・感情表現・指先の巧緻性・記憶力を育みます。「できた！」という達成感が自己肯定感の向上につながります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Program -->
+<section id="program">
+  <div class="section-inner">
+    <span class="section-tag" style="background:var(--green-lt);color:#2e7d32">プログラム</span>
+    <h2 class="section-title">療育プログラムのご案内</h2>
+    <p class="section-lead">1コマ90分の療育の中に、グループ・個別・専門プログラムが組み込まれています。</p>
+    <div class="program-grid reveal">
+      <div class="program-card">
+        <div class="p-icon">👥</div>
+        <h4>グループ療育</h4>
+        <p>小グループで社会性・コミュニケーションを育む集団活動</p>
+        <span class="time-badge">週1〜複数回</span>
+      </div>
+      <div class="program-card">
+        <div class="p-icon">🧒</div>
+        <h4>個別療育</h4>
+        <p>お子さまのペースに合わせた1対1のオーダーメイド療育</p>
+        <span class="time-badge">毎回実施</span>
+      </div>
+      <div class="program-card">
+        <div class="p-icon">🎹</div>
+        <h4>ピアノ療育</h4>
+        <p>専門講師によるピアノを使った療育プログラム</p>
+        <span class="time-badge">定期開催</span>
+      </div>
+      <div class="program-card">
+        <div class="p-icon">🎭</div>
+        <h4>体験型イベント</h4>
+        <p>折り紙・バルーン・リトミック・茶道など多彩な体験活動</p>
+        <span class="time-badge">月定期開催</span>
+      </div>
+    </div>
+    <div style="margin-top:28px;background:var(--red-lt);border-radius:var(--radius);padding:20px 24px;">
+      <strong style="color:var(--red)">⏰ 1コマの療育構成（90分）</strong>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+        <div style="background:#fff;border-radius:8px;padding:10px 16px;font-size:.85rem;flex:1;min-width:120px;text-align:center"><strong>準備・あいさつ</strong><br><span style="color:var(--muted)">10分</span></div>
+        <div style="background:#fff;border-radius:8px;padding:10px 16px;font-size:.85rem;flex:1;min-width:120px;text-align:center"><strong>グループ活動</strong><br><span style="color:var(--muted)">30分</span></div>
+        <div style="background:#fff;border-radius:8px;padding:10px 16px;font-size:.85rem;flex:1;min-width:120px;text-align:center"><strong>個別療育</strong><br><span style="color:var(--muted)">40分</span></div>
+        <div style="background:#fff;border-radius:8px;padding:10px 16px;font-size:.85rem;flex:1;min-width:120px;text-align:center"><strong>振り返り・帰り支度</strong><br><span style="color:var(--muted)">10分</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Staff -->
+<section class="therapies-bg" id="staff">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#f3e5f5;color:#6a1b9a">スタッフ</span>
+    <h2 class="section-title">専門スタッフ紹介</h2>
+    <p class="section-lead">保育士・幼稚園教諭・ピアノ講師など、子どもの発達に関わる専門スタッフが揃っています。</p>
+    <div class="staff-grid reveal">
+      <div class="staff-card">
+        <div class="staff-avatar">👩</div>
+        <div class="staff-name">管理者・梅田</div>
+        <div class="staff-role">施設長 / 療育相談員</div>
+        <span class="staff-tag">児童発達支援管理責任者</span>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">👩‍🏫</div>
+        <div class="staff-name">保育担当スタッフ</div>
+        <div class="staff-role">保育士 / 幼稚園教諭</div>
+        <span class="staff-tag">モンテッソーリ療育担当</span>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">🎹</div>
+        <div class="staff-name">音楽療育スタッフ</div>
+        <div class="staff-role">ピアノ講師 / 音楽療育士</div>
+        <span class="staff-tag">ピアノ・リトミック担当</span>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">👨‍🎓</div>
+        <div class="staff-name">発語・言語担当</div>
+        <div class="staff-role">言語聴覚士 / 療育士</div>
+        <span class="staff-tag">発語リズム療育担当</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Access -->
+<section id="access">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#e3f2fd;color:#1565c0">アクセス</span>
+    <h2 class="section-title">施設へのアクセス</h2>
+    <div class="access-grid reveal">
+      <div class="access-info">
+        <div class="access-item">
+          <div class="a-icon">📍</div>
+          <div>
+            <h4>住所</h4>
+            <p>〒591-8034<br>大阪府堺市北区百舌鳥陵南町3丁193-1A</p>
+          </div>
+        </div>
+        <div class="access-item">
+          <div class="a-icon">🚃</div>
+          <div>
+            <h4>最寄り駅</h4>
+            <p>JR阪和線「百舌鳥駅」より徒歩約10分<br>南海高野線「中百舌鳥駅」よりバス</p>
+          </div>
+        </div>
+        <div class="access-item">
+          <div class="a-icon">🚗</div>
+          <div>
+            <h4>お車の場合</h4>
+            <p>近隣に駐車スペースあり。<br>ご来園時にスタッフへご確認ください。</p>
+          </div>
+        </div>
+        <div class="access-item">
+          <div class="a-icon">📞</div>
+          <div>
+            <h4>電話</h4>
+            <p><a href="tel:0722427208" style="color:var(--red);font-weight:700">072-242-7208</a>（TEL・FAX）<br>
+            <a href="tel:0700504062370" style="color:var(--red);font-weight:700">070-5046-2370</a>（梅田携帯）</p>
+          </div>
+        </div>
+        <a href="#contact-cta" class="btn btn-primary" style="margin-top:8px;align-self:flex-start">🌸 見学・ご利用申込はこちら</a>
+      </div>
+      <div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3162645962616!2d135.492254715228!3d34.545546980474654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000dbaf00e8c7f1%3A0xe5a3a54fb0733c1c!2z44CSNTkxLTgwMzQg5aSn6Ziq5bqc5aC65biC5YyX5Yy655m-6IiM6bOl6Zm15Y2X55S677yT5LiB77yR77yZ77yTIOODoeOCvuODs-ODqeODleOCo-ODjSAxYQ!5e0!3m2!1sja!2sjp!4v1661821321938!5m2!1sja!2sjp"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact-cta" style="background:linear-gradient(135deg,var(--red),#c9341f);color:#fff;text-align:center;padding:60px 24px">
+  <h2 style="font-size:clamp(1.3rem,3vw,1.9rem);font-weight:800;margin-bottom:12px">見学・相談はお気軽にどうぞ</h2>
+  <p style="opacity:.9;margin-bottom:28px">「うちの子に合うかな？」というご不安もスタッフが丁寧にお答えします。</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="index.html#contact" style="background:#fff;color:var(--red);font-weight:700;padding:13px 28px;border-radius:50px;display:inline-flex;align-items:center;gap:6px">📋 問い合わせフォームへ</a>
+    <a href="tel:0722427208" style="background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);font-weight:600;padding:13px 28px;border-radius:50px;display:inline-flex;align-items:center;gap:6px">📞 072-242-7208</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo-sm">
+      <span>🍎</span>
+      療育ルーム りんご園 ／ NPO法人 アップルフィールド
+    </div>
+    <div class="footer-links">
+      <a href="index.html">← ポータルへ戻る</a>
+      <a href="shinkanaoka.html">新金岡りんご園</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:20px auto 0;text-align:center;font-size:.78rem;color:#666;border-top:1px solid #333;padding-top:20px">
+    © 2025 NPO法人 アップルフィールド All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

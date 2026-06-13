@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>採用情報 | 療育ルーム りんご園</title>
+  <meta name="description" content="りんご園では保育士・児童指導員・ピアノ講師など専門スタッフを募集しています。子どもの発達に携わる仕事に興味のある方はぜひご応募ください。">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: #333; line-height: 1.7; background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    :root {
+      --red: #e8402a; --red-lt: #fde8e5;
+      --green: #4caf50; --green-lt: #e8f5e9;
+      --orange: #f7941d;
+      --muted: #666; --border: #e8e8e8;
+      --radius: 12px; --shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 11px 24px; border-radius: 50px; font-size: .9rem; font-weight: 600; cursor: pointer; transition: all .2s; border: none; }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover { background: #388e3c; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(76,175,80,.35); }
+    .btn-outline { background: transparent; color: var(--green); border: 2px solid var(--green); }
+    .btn-outline:hover { background: var(--green-lt); }
+
+    header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 66px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 1.15rem; font-weight: 700; color: var(--red); }
+    .logo-icon { width: 38px; height: 38px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #fff; }
+    .logo-sub { font-size: .68rem; color: var(--muted); font-weight: 400; display: block; margin-top: -3px; }
+    nav { display: flex; align-items: center; gap: 24px; font-size: .88rem; }
+    nav a { color: var(--muted); font-weight: 500; transition: color .2s; }
+    nav a:hover, nav a.active { color: var(--red); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #333; border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; inset: 66px 0 0 0; background: #fff; z-index: 99; overflow-y: auto; padding: 20px 24px; flex-direction: column; gap: 12px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 1rem; color: #333; font-weight: 500; }
+
+    .breadcrumb { background: #fafafa; padding: 12px 24px; font-size: .82rem; color: var(--muted); }
+    .breadcrumb-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 6px; align-items: center; }
+    .breadcrumb a { color: var(--red); }
+
+    /* Hero */
+    .page-hero { background: linear-gradient(135deg, #e8f5e9, #f1f8e9, #fffde7); padding: 56px 24px 48px; text-align: center; }
+    .page-hero .tag { display: inline-block; background: var(--green-lt); color: #2e7d32; font-size: .78rem; font-weight: 700; padding: 4px 14px; border-radius: 50px; margin-bottom: 14px; }
+    .page-hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; margin-bottom: 14px; }
+    .page-hero h1 em { color: var(--green); font-style: normal; }
+    .page-hero p { color: var(--muted); max-width: 540px; margin: 0 auto 28px; }
+    .hero-stats { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+    .hero-stat { background: #fff; border-radius: var(--radius); padding: 16px 24px; text-align: center; box-shadow: var(--shadow); }
+    .hero-stat .num { font-size: 1.8rem; font-weight: 800; color: var(--green); line-height: 1; }
+    .hero-stat .num span { font-size: .9rem; }
+    .hero-stat .label { font-size: .78rem; color: var(--muted); margin-top: 4px; }
+
+    section { padding: 64px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .08em; padding: 3px 12px; border-radius: 50px; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 800; margin-bottom: 12px; }
+    .section-lead { color: var(--muted); margin-bottom: 40px; max-width: 600px; }
+
+    /* Why */
+    .why-bg { background: #fafafa; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .why-card { background: #fff; border-radius: var(--radius); padding: 24px 20px; box-shadow: var(--shadow); text-align: center; }
+    .why-card .w-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .why-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: 8px; color: #2e7d32; }
+    .why-card p { font-size: .85rem; color: var(--muted); }
+
+    /* Job cards */
+    .jobs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+    .job-card { border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+    .job-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.12); }
+    .job-header { padding: 24px 24px 18px; position: relative; }
+    .job-card:nth-child(1) .job-header { background: linear-gradient(135deg, #e8f5e9, #f1f8e9); }
+    .job-card:nth-child(2) .job-header { background: linear-gradient(135deg, #e3f2fd, #e8eaf6); }
+    .job-card:nth-child(3) .job-header { background: linear-gradient(135deg, #fff8e1, #fce4ec); }
+    .job-card:nth-child(4) .job-header { background: linear-gradient(135deg, #f3e5f5, #ede7f6); }
+    .job-badge { position: absolute; top: 16px; right: 16px; font-size: .7rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; }
+    .badge-open { background: var(--green); color: #fff; }
+    .badge-soon { background: var(--orange); color: #fff; }
+    .job-icon { font-size: 2.4rem; margin-bottom: 10px; }
+    .job-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 4px; }
+    .job-sub { font-size: .82rem; color: var(--muted); }
+    .job-body { padding: 20px 24px 24px; }
+    .job-detail-row { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: .88rem; }
+    .job-detail-row:last-of-type { border-bottom: none; }
+    .job-detail-label { font-weight: 700; color: var(--muted); min-width: 72px; flex-shrink: 0; font-size: .82rem; }
+    .job-apply { display: block; text-align: center; margin-top: 18px; }
+
+    /* Process */
+    .process-bg { background: linear-gradient(135deg, #f1f8e9, #e8f5e9); }
+    .process-steps { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+    .process-step { flex: 1; min-width: 140px; background: #fff; border-radius: var(--radius); padding: 24px 18px; text-align: center; box-shadow: var(--shadow); position: relative; }
+    .process-step::before { content: attr(data-step); display: block; font-size: .7rem; font-weight: 800; letter-spacing: .1em; color: var(--green); margin-bottom: 10px; }
+    .process-step .p-icon { font-size: 2rem; margin-bottom: 10px; }
+    .process-step h4 { font-size: .9rem; font-weight: 700; margin-bottom: 6px; }
+    .process-step p { font-size: .8rem; color: var(--muted); }
+    .process-arrow { font-size: 1.4rem; color: var(--border); align-self: center; flex-shrink: 0; }
+
+    /* Form */
+    .form-bg { background: #fafafa; }
+    .form-container { max-width: 720px; margin: 0 auto; background: #fff; border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: .88rem; font-weight: 600; margin-bottom: 6px; }
+    .form-label .req { display: inline-block; background: var(--green); color: #fff; font-size: .65rem; padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 11px 14px; font-size: .9rem; border: 1.5px solid var(--border); border-radius: 8px; font-family: inherit; outline: none; background: #fff; transition: border-color .2s; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--green); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit { width: 100%; padding: 14px; font-size: 1rem; font-weight: 700; border-radius: 50px; margin-top: 8px; background: var(--green); color: #fff; cursor: pointer; border: none; transition: all .2s; }
+    .form-submit:hover { background: #388e3c; transform: translateY(-1px); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .5s, transform .5s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    footer { background: #1a1a1a; color: #ccc; padding: 40px 24px 28px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; margin-bottom: 32px; }
+    .footer-logo { color: #fff; font-weight: 700; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .footer-logo-icon { width: 30px; height: 30px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .9rem; }
+    .footer-brand p { font-size: .83rem; color: #999; }
+    .footer-nav-cols { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-nav-group h5 { color: #fff; font-size: .83rem; font-weight: 700; margin-bottom: 12px; }
+    .footer-nav-group ul { list-style: none; }
+    .footer-nav-group li { margin-bottom: 7px; }
+    .footer-nav-group a { font-size: .82rem; color: #999; transition: color .2s; }
+    .footer-nav-group a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid #333; padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .78rem; color: #666; }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-container { padding: 24px 20px; }
+      .process-arrow { display: none; }
+      section { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🍎</div>
+      <div>りんご園<span class="logo-sub">NPO法人 アップルフィールド</span></div>
+    </a>
+    <nav>
+      <a href="about.html">りんご園とは</a>
+      <a href="index.html#facilities">施設を探す</a>
+      <a href="news.html">お知らせ</a>
+      <a href="recruit.html" class="active">採用情報</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+    <a href="#entry-form" class="btn btn-primary">応募する</a>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="about.html" onclick="toggleNav()">りんご園とは</a>
+  <a href="index.html#facilities" onclick="toggleNav()">施設を探す</a>
+  <a href="news.html" onclick="toggleNav()">お知らせ</a>
+  <a href="recruit.html" onclick="toggleNav()">採用情報</a>
+  <a href="contact.html" onclick="toggleNav()">お問い合わせ</a>
+</div>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">ホーム</a>
+    <span>›</span>
+    <span style="color:#333">採用情報</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <span class="tag">🌿 一緒に働きませんか</span>
+  <h1>お子さまの「できた！」を<br><em>いっしょに喜べる</em>仲間へ</h1>
+  <p>りんご園では、子どもの発達に関わる専門スタッフを募集しています。一人ひとりのお子さまに寄り添い、笑顔あふれる療育を一緒につくっていきましょう。</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">2<span>拠点</span></div>
+      <div class="label">堺市内で展開中</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">少人数<span>制</span></div>
+      <div class="label">アットホームな職場</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">研修<span>制度</span></div>
+      <div class="label">未経験でも安心</div>
+    </div>
+  </div>
+</div>
+
+<!-- Why -->
+<section class="why-bg" id="why">
+  <div class="section-inner">
+    <span class="section-tag" style="background:var(--green-lt);color:#2e7d32">りんご園で働く魅力</span>
+    <h2 class="section-title">ここで働く理由</h2>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="w-icon">🌱</div>
+        <h3>成長できる環境</h3>
+        <p>モンテッソーリ・発語リズム・ピアノ療育など、独自メソッドを学べる研修制度を用意しています。</p>
+      </div>
+      <div class="why-card">
+        <div class="w-icon">🤝</div>
+        <h3>少人数・チームで支援</h3>
+        <p>少人数体制でスタッフ同士の連携が密。困ったことはすぐ相談できるアットホームな職場です。</p>
+      </div>
+      <div class="why-card">
+        <div class="w-icon">⏰</div>
+        <h3>働きやすい勤務形態</h3>
+        <p>パート・正職員など柔軟な働き方を選択できます。育児中のスタッフも活躍しています。</p>
+      </div>
+      <div class="why-card">
+        <div class="w-icon">💛</div>
+        <h3>やりがいを感じる仕事</h3>
+        <p>お子さまの「できた！」という瞬間を毎日体験できる、やりがいにあふれた職場です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Jobs -->
+<section id="jobs">
+  <div class="section-inner">
+    <span class="section-tag" style="background:var(--red-lt);color:var(--red)">募集職種</span>
+    <h2 class="section-title">現在の募集状況</h2>
+    <p class="section-lead">複数の職種で積極採用中です。「まず話だけ聞いてみたい」という方もお気軽にどうぞ。</p>
+    <div class="jobs-grid reveal">
+
+      <div class="job-card">
+        <div class="job-header">
+          <span class="job-badge badge-open">募集中</span>
+          <div class="job-icon">👩‍🏫</div>
+          <div class="job-title">保育士・幼稚園教諭</div>
+          <div class="job-sub">正職員 / パート</div>
+        </div>
+        <div class="job-body">
+          <div class="job-detail-row"><span class="job-detail-label">雇用形態</span><span>正職員・パート</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">勤務地</span><span>りんご園 本院 / 新金岡りんご園</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">勤務時間</span><span>応相談（週2〜フルタイム可）</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">必要資格</span><span>保育士資格 または 幼稚園教諭免許</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">経験</span><span>経験者優遇・未経験可（研修あり）</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">仕事内容</span><span>グループ療育・個別療育・保護者支援・記録作成</span></div>
+          <a href="#entry-form" class="btn btn-primary job-apply">この職種に応募する</a>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <span class="job-badge badge-open">募集中</span>
+          <div class="job-icon">🎓</div>
+          <div class="job-title">児童指導員</div>
+          <div class="job-sub">正職員 / パート</div>
+        </div>
+        <div class="job-body">
+          <div class="job-detail-row"><span class="job-detail-label">雇用形態</span><span>正職員・パート</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">勤務地</span><span>りんご園 本院 / 新金岡りんご園</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">勤務時間</span><span>応相談</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">必要資格</span><span>社会福祉士・精神保健福祉士・小中高教員免許 等</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">経験</span><span>経験者優遇・未経験可</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">仕事内容</span><span>個別療育・グループ活動・記録・保護者連絡</span></div>
+          <a href="#entry-form" class="btn btn-primary job-apply">この職種に応募する</a>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <span class="job-badge badge-open">募集中</span>
+          <div class="job-icon">🎹</div>
+          <div class="job-title">ピアノ講師・音楽療育士</div>
+          <div class="job-sub">パート / 業務委託</div>
+        </div>
+        <div class="job-body">
+          <div class="job-detail-row"><span class="job-detail-label">雇用形態</span><span>パート・業務委託</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">勤務地</span><span>りんご園 本院 / 新金岡りんご園</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">勤務時間</span><span>週1〜応相談</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">必要資格</span><span>ピアノ指導経験 / 音楽療法士（あれば尚可）</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">経験</span><span>子どもへの指導経験歓迎</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">仕事内容</span><span>ピアノを使った療育プログラムの実施</span></div>
+          <a href="#entry-form" class="btn btn-primary job-apply">この職種に応募する</a>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <span class="job-badge badge-open">募集中</span>
+          <div class="job-icon">📋</div>
+          <div class="job-title">児童発達支援管理責任者（サビ管）</div>
+          <div class="job-sub">正職員</div>
+        </div>
+        <div class="job-body">
+          <div class="job-detail-row"><span class="job-detail-label">雇用形態</span><span>正職員</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">勤務地</span><span>りんご園 本院 / 新金岡りんご園</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">勤務時間</span><span>フルタイム</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">必要資格</span><span>児童発達支援管理責任者 研修修了者</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">経験</span><span>実務経験要件を満たす方</span></div>
+          <div class="job-detail-row"><span class="job-detail-label">仕事内容</span><span>個別支援計画作成・モニタリング・スタッフ指導</span></div>
+          <a href="#entry-form" class="btn btn-primary job-apply">この職種に応募する</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process-bg" id="process">
+  <div class="section-inner">
+    <span class="section-tag" style="background:var(--green-lt);color:#2e7d32">選考プロセス</span>
+    <h2 class="section-title">採用の流れ</h2>
+    <p class="section-lead">応募から内定まで最短2週間。まずはお気軽にご応募ください。</p>
+    <div class="process-steps reveal">
+      <div class="process-step" data-step="STEP 1">
+        <div class="p-icon">📝</div>
+        <h4>エントリー</h4>
+        <p>下記フォームまたはお電話でご応募ください</p>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step" data-step="STEP 2">
+        <div class="p-icon">☎️</div>
+        <h4>書類選考・ご連絡</h4>
+        <p>3営業日以内に担当よりご連絡します</p>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step" data-step="STEP 3">
+        <div class="p-icon">🏠</div>
+        <h4>施設見学・面接</h4>
+        <p>実際の現場をご覧いただき、代表と面談します</p>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step" data-step="STEP 4">
+        <div class="p-icon">📋</div>
+        <h4>体験実習（任意）</h4>
+        <p>ご希望の方は実際の療育を体験いただけます</p>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step" data-step="STEP 5">
+        <div class="p-icon">🌟</div>
+        <h4>内定・入職</h4>
+        <p>入職日・条件等を相談のうえ決定します</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Entry Form -->
+<section class="form-bg" id="entry-form">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:40px">
+      <span class="section-tag" style="background:var(--green-lt);color:#2e7d32">応募フォーム</span>
+      <h2 class="section-title">エントリー</h2>
+      <p style="color:var(--muted)">「話だけ聞きたい」「見学してみたい」というご相談もこちらからどうぞ。</p>
+    </div>
+    <div class="form-container reveal">
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">お名前<span class="req">必須</span></label>
+            <input type="text" class="form-input" placeholder="山田 花子" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">フリガナ<span class="req">必須</span></label>
+            <input type="text" class="form-input" placeholder="ヤマダ ハナコ" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">メールアドレス<span class="req">必須</span></label>
+            <input type="email" class="form-input" placeholder="example@mail.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">電話番号<span class="req">必須</span></label>
+            <input type="tel" class="form-input" placeholder="090-0000-0000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">希望職種<span class="req">必須</span></label>
+          <select class="form-select" required>
+            <option value="">選択してください</option>
+            <option>保育士・幼稚園教諭</option>
+            <option>児童指導員</option>
+            <option>ピアノ講師・音楽療育士</option>
+            <option>児童発達支援管理責任者（サビ管）</option>
+            <option>その他・まずは話だけ聞きたい</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">希望雇用形態</label>
+            <select class="form-select">
+              <option value="">選択してください</option>
+              <option>正職員</option>
+              <option>パート</option>
+              <option>業務委託</option>
+              <option>未定・相談したい</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">希望勤務地</label>
+            <select class="form-select">
+              <option value="">選択してください</option>
+              <option>りんご園（本院・百舌鳥陵南町）</option>
+              <option>新金岡りんご園</option>
+              <option>どちらでも可</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">保有資格・経験</label>
+          <input type="text" class="form-input" placeholder="例：保育士（実務5年）、幼稚園教諭一種">
+        </div>
+        <div class="form-group">
+          <label class="form-label">志望動機・メッセージ</label>
+          <textarea class="form-textarea" placeholder="志望動機や質問事項など、なんでもお気軽に記入ください。"></textarea>
+        </div>
+        <button type="submit" class="form-submit">エントリーする →</button>
+      </form>
+      <div id="form-success" style="display:none;margin-top:20px;padding:20px;background:var(--green-lt);border-radius:10px;color:#2e7d32;font-weight:600;text-align:center">
+        ✅ エントリーを受け付けました！3営業日以内にご連絡します。
+      </div>
+      <div style="margin-top:20px;text-align:center;font-size:.85rem;color:var(--muted)">
+        お電話でのお問い合わせは <a href="tel:0722427208" style="color:var(--green);font-weight:700">072-242-7208</a> まで
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><div class="footer-logo-icon">🍎</div> りんご園</div>
+        <p>NPO法人 アップルフィールド<br>〒591-8034 堺市北区百舌鳥陵南町3丁193-1A</p>
+      </div>
+      <div class="footer-nav-cols">
+        <div class="footer-nav-group">
+          <h5>りんご園について</h5>
+          <ul>
+            <li><a href="about.html">りんご園とは</a></li>
+            <li><a href="about.html#services">サービス内容</a></li>
+            <li><a href="about.html#flow">ご利用の流れ</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h5>施設</h5>
+          <ul>
+            <li><a href="ringo-en.html">りんご園（本院）</a></li>
+            <li><a href="shinkanaoka.html">新金岡りんご園</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h5>その他</h5>
+          <ul>
+            <li><a href="news.html">お知らせ</a></li>
+            <li><a href="recruit.html">採用情報</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NPO法人 アップルフィールド / 療育ルーム りんご園 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() { document.getElementById('mobileNav').classList.toggle('open'); }
+  function handleSubmit(e) { e.preventDefault(); document.getElementById('form-success').style.display = 'block'; e.target.style.display = 'none'; }
+  const obs = new IntersectionObserver(e => e.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

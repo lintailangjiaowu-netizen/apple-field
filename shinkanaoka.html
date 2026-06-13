@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新金岡 りんご園 | 堺市北区 児童発達支援（2025年2月オープン）</title>
+  <meta name="description" content="堺市北区新金岡エリアに令和7年2月1日オープン。モンテッソーリ・発語リズム・ピアノ療育で未就学児の発達をサポートします。">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: #333; line-height: 1.7; background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    :root {
+      --red: #e8402a; --red-lt: #fde8e5;
+      --green: #4caf50; --green-lt: #e8f5e9;
+      --orange: #f7941d;
+      --teal: #00897b; --teal-lt: #e0f2f1;
+      --muted: #666; --border: #e8e8e8;
+      --radius: 12px; --shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 11px 24px; border-radius: 50px; font-size: .9rem; font-weight: 600; cursor: pointer; transition: all .2s; border: none; }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: #00695c; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,137,123,.35); }
+    .btn-outline { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+    .btn-outline:hover { background: var(--teal-lt); }
+    .btn-red { background: var(--red); color: #fff; }
+    .btn-red:hover { background: #c9341f; }
+
+    header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 66px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+    .logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #fff; }
+    nav { display: flex; align-items: center; gap: 24px; font-size: .88rem; }
+    nav a { color: var(--muted); font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--teal); }
+
+    .breadcrumb { background: #fafafa; padding: 12px 24px; font-size: .82rem; color: var(--muted); }
+    .breadcrumb-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 6px; align-items: center; }
+    .breadcrumb a { color: var(--red); }
+
+    /* Hero — green theme for new branch */
+    .facility-hero { background: linear-gradient(135deg, #f1f8e9 0%, #e0f2f1 60%, #e8f5e9 100%); padding: 56px 24px; }
+    .facility-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: center; }
+    .badge-new { display: inline-flex; align-items: center; gap: 6px; background: var(--orange); color: #fff; font-size: .72rem; font-weight: 700; padding: 4px 12px; border-radius: 50px; margin-bottom: 12px; }
+    .facility-hero h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 14px; }
+    .facility-hero h1 em { color: var(--teal); font-style: normal; }
+    .facility-hero p { color: var(--muted); margin-bottom: 24px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-visual { background: linear-gradient(135deg, #e0f2f1, #c8e6c9); border-radius: 20px; height: 260px; display: flex; align-items: center; justify-content: center; font-size: 6rem; position: relative; }
+    .new-ribbon {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--orange); color: #fff;
+      font-size: .75rem; font-weight: 800; padding: 4px 14px;
+      border-radius: 50px;
+    }
+
+    .info-card { background: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); margin-top: 24px; }
+    .info-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: .9rem; }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { font-weight: 700; min-width: 90px; color: var(--muted); flex-shrink: 0; font-size: .82rem; }
+    .info-value { color: var(--muted); }
+
+    section { padding: 64px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .1em; padding: 3px 12px; border-radius: 50px; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 800; margin-bottom: 12px; }
+    .section-lead { color: var(--muted); margin-bottom: 40px; }
+
+    .highlight-bg { background: var(--teal-lt); }
+    .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .highlight-card { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); border-top: 4px solid var(--teal); }
+    .highlight-card .h-icon { font-size: 2rem; margin-bottom: 12px; }
+    .highlight-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--teal); }
+    .highlight-card p { font-size: .87rem; color: var(--muted); }
+
+    .therapy-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .therapy-card { background: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); border-left: 4px solid transparent; }
+    .therapy-card:nth-child(1) { border-left-color: var(--red); }
+    .therapy-card:nth-child(2) { border-left-color: var(--green); }
+    .therapy-card:nth-child(3) { border-left-color: var(--orange); }
+    .therapy-card .t-icon { font-size: 2rem; margin-bottom: 14px; }
+    .therapy-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .therapy-card p { font-size: .88rem; color: var(--muted); }
+
+    /* SNS / news section */
+    .news-bg { background: #fafafa; }
+    .news-list { display: flex; flex-direction: column; gap: 0; }
+    .news-item { display: flex; gap: 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .news-item:first-child { border-top: 1px solid var(--border); }
+    .news-date { font-size: .82rem; color: var(--muted); white-space: nowrap; min-width: 90px; }
+    .news-cat { font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+    .cat-new { background: #fff3e0; color: #e65100; }
+    .cat-info { background: #e3f2fd; color: #1565c0; }
+    .news-title { font-size: .92rem; }
+
+    /* Access */
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .access-info { display: flex; flex-direction: column; gap: 14px; }
+    .access-item { display: flex; gap: 12px; align-items: flex-start; }
+    .access-item .a-icon { width: 36px; height: 36px; background: var(--teal-lt); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .access-item h4 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+    .access-item p { font-size: .85rem; color: var(--muted); }
+    .map-container { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--teal-lt); height: 300px; display: flex; align-items: center; justify-content: center; }
+
+    /* Nearby */
+    .nearby-card { background: #fff; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px 24px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow); }
+    .nearby-icon { width: 48px; height: 48px; background: var(--red-lt); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+    .nearby-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
+    .nearby-card p { font-size: .83rem; color: var(--muted); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .5s, transform .5s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    footer { background: #1a1a1a; color: #ccc; padding: 40px 24px 28px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-logo-sm { color: #fff; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .footer-logo-sm span { width: 28px; height: 28px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: .82rem; color: #888; }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .facility-hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { height: 180px; font-size: 4rem; }
+      .access-grid { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🍏</div>
+      新金岡 りんご園
+    </a>
+    <nav>
+      <a href="#highlight">施設の特長</a>
+      <a href="#therapy">療育内容</a>
+      <a href="#news">お知らせ</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn-primary">見学を申し込む</a>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">ホーム</a>
+    <span>›</span>
+    <span>施設一覧</span>
+    <span>›</span>
+    <span style="color:#333">新金岡 りんご園</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="facility-hero">
+  <div class="facility-hero-inner">
+    <div>
+      <span class="badge-new">🌟 2025年2月 グランドオープン</span>
+      <h1>新金岡<br><em>りんご園</em></h1>
+      <p>りんご園の2拠点目として堺市北区新金岡エリアに令和7年2月1日にオープン。りんご園の3つの療育メソッドをそのままに、より多くのお子さまと保護者の方をサポートします。</p>
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn btn-primary">🌸 見学・利用申込</a>
+        <a href="tel:0700504062370" class="btn btn-outline">📞 070-5046-2370</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-visual">
+        🍏
+        <span class="new-ribbon">NEW OPEN</span>
+      </div>
+      <div class="info-card">
+        <div class="info-row">
+          <span class="info-label">エリア</span>
+          <span class="info-value">大阪府堺市北区（新金岡エリア）</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">電話</span>
+          <span class="info-value"><a href="tel:0700504062370" style="color:var(--teal)">070-5046-2370</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">対象</span>
+          <span class="info-value">未就学児（0〜6歳）</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">開設</span>
+          <span class="info-value">令和7年（2025年）2月1日</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">運営</span>
+          <span class="info-value">NPO法人 アップルフィールド</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">状態</span>
+          <span class="info-value" style="color:var(--green);font-weight:700">✅ 新規受付中</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Highlights -->
+<section class="highlight-bg" id="highlight">
+  <div class="section-inner">
+    <span class="section-tag" style="background:var(--teal-lt);color:var(--teal)">施設の特長</span>
+    <h2 class="section-title">新金岡りんご園について</h2>
+    <p class="section-lead">りんご園の実績とノウハウをそのままに、新金岡エリアで新たなスタートを切りました。</p>
+    <div class="highlight-grid reveal">
+      <div class="highlight-card">
+        <div class="h-icon">🌟</div>
+        <h3>グランドオープン</h3>
+        <p>令和7年2月1日、堺市北区の新金岡エリアに開設。現在、新規利用者を積極的に受け入れています。</p>
+      </div>
+      <div class="highlight-card">
+        <div class="h-icon">🏠</div>
+        <h3>アクセスしやすい立地</h3>
+        <p>新金岡駅周辺の便利な場所に位置。公共交通機関でも通いやすい環境です。</p>
+      </div>
+      <div class="highlight-card">
+        <div class="h-icon">👨‍👩‍👧</div>
+        <h3>少人数制・個別対応</h3>
+        <p>本院と同様の少人数グループ・個別療育スタイルで、一人ひとりに丁寧に向き合います。</p>
+      </div>
+      <div class="highlight-card">
+        <div class="h-icon">🔗</div>
+        <h3>りんご園グループ連携</h3>
+        <p>本院（百舌鳥陵南町）と連携し、専門スタッフが両施設をサポート。安定したサービスを提供します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Therapy -->
+<section id="therapy">
+  <div class="section-inner">
+    <span class="section-tag" style="background:var(--red-lt);color:var(--red)">療育内容</span>
+    <h2 class="section-title">3つの療育の柱（本院と共通）</h2>
+    <p class="section-lead">本院りんご園と同じ療育メソッドで、お子さまの「できる」を一緒に発見します。</p>
+    <div class="therapy-list reveal">
+      <div class="therapy-card">
+        <div class="t-icon">🎨</div>
+        <h3>モンテッソーリ療育</h3>
+        <p>子どもが本来もつ「自分でやりたい」という意欲を大切に、感覚・運動・言語・数・文化の5分野にアプローチ。日常生活の自立へつなげます。</p>
+      </div>
+      <div class="therapy-card">
+        <div class="t-icon">🎵</div>
+        <h3>発語リズム療育</h3>
+        <p>リズムや音楽・身体運動を通じて、発語・発音・コミュニケーション力を楽しみながら育てます。言葉が出にくいお子さまにも効果的なアプローチです。</p>
+      </div>
+      <div class="therapy-card">
+        <div class="t-icon">🎹</div>
+        <h3>ピアノ療育</h3>
+        <p>ピアノ演奏を通じて、集中力・感情表現・指先の巧緻性・記憶力を育みます。「できた！」という達成感が自己肯定感の向上につながります。</p>
+      </div>
+    </div>
+    <div style="margin-top:24px;text-align:center">
+      <a href="ringo-en.html#therapy" style="color:var(--teal);font-size:.9rem;display:inline-flex;align-items:center;gap:4px">
+        詳しい療育内容は本院ページをご覧ください →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="news-bg" id="news">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#fff3e0;color:#e65100">お知らせ</span>
+    <h2 class="section-title">新金岡りんご園 からのお知らせ</h2>
+    <div class="news-list reveal">
+      <div class="news-item">
+        <span class="news-date">2025.02.01</span>
+        <span class="news-cat cat-new">NEW</span>
+        <div class="news-title">新金岡りんご園 グランドオープンしました！新規利用者を受け付けています。</div>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2025.10.30</span>
+        <span class="news-cat cat-info">お知らせ</span>
+        <div class="news-title">令和7年2月1日オープン予告 – 新金岡エリアに新拠点が誕生します</div>
+      </div>
+    </div>
+    <div style="margin-top:24px;background:#fff;border-radius:var(--radius);padding:20px 24px;border:1.5px solid var(--teal);display:flex;gap:16px;align-items:center">
+      <div style="font-size:1.8rem">💬</div>
+      <div>
+        <strong>最新情報はInstagram・LINEでも配信中！</strong>
+        <div style="font-size:.85rem;color:var(--muted);margin-top:4px">
+          <a href="https://www.instagram.com/ringoen0701/" style="color:var(--teal)" target="_blank">📷 Instagram @ringoen0701</a>
+          でイベントや日々の様子を発信しています。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Access -->
+<section id="access">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#e3f2fd;color:#1565c0">アクセス</span>
+    <h2 class="section-title">施設へのアクセス</h2>
+    <div class="access-grid reveal">
+      <div class="access-info">
+        <div class="access-item">
+          <div class="a-icon">📍</div>
+          <div>
+            <h4>エリア</h4>
+            <p>大阪府堺市北区（新金岡エリア）<br>※詳しい住所はお問い合わせください</p>
+          </div>
+        </div>
+        <div class="access-item">
+          <div class="a-icon">🚃</div>
+          <div>
+            <h4>最寄り駅</h4>
+            <p>南海高野線「新金岡駅」周辺<br>（詳細はお問い合わせ時にご案内します）</p>
+          </div>
+        </div>
+        <div class="access-item">
+          <div class="a-icon">📞</div>
+          <div>
+            <h4>お問い合わせ</h4>
+            <p><a href="tel:0700504062370" style="color:var(--teal);font-weight:700">070-5046-2370</a>（梅田）<br>
+            <a href="tel:0722427208" style="color:var(--teal);font-weight:700">072-242-7208</a>（本院 TEL）</p>
+          </div>
+        </div>
+        <a href="index.html#contact" class="btn btn-primary" style="margin-top:8px;align-self:flex-start">🌸 見学・ご利用申込はこちら</a>
+      </div>
+      <div>
+        <div class="map-container" style="font-size:.9rem;color:var(--teal);flex-direction:column;gap:12px">
+          <div style="font-size:3rem">🗺️</div>
+          <div style="text-align:center;padding:0 24px">
+            <strong>新金岡エリア</strong><br>
+            <span style="color:var(--muted);font-size:.85rem">詳しい所在地はお問い合わせください</span>
+          </div>
+        </div>
+        <!-- Nearby facility link -->
+        <div style="margin-top:20px">
+          <div class="nearby-card">
+            <div class="nearby-icon">🍎</div>
+            <div>
+              <h4>りんご園 本院（百舌鳥陵南町）</h4>
+              <p>堺市北区百舌鳥陵南町3丁193-1A<br>TEL: 072-242-7208</p>
+              <a href="ringo-en.html" style="color:var(--red);font-size:.82rem;margin-top:4px;display:inline-block">本院の詳細を見る →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg,var(--teal),#00695c);color:#fff;text-align:center;padding:60px 24px">
+  <h2 style="font-size:clamp(1.3rem,3vw,1.9rem);font-weight:800;margin-bottom:12px">見学・相談はお気軽にどうぞ</h2>
+  <p style="opacity:.9;margin-bottom:8px">新金岡りんご園は現在、新規利用者を受け付けています。</p>
+  <p style="opacity:.85;margin-bottom:28px;font-size:.9rem">「受給者証の取得方法がわからない」「どんな療育か見てみたい」など、どんなご質問もお気軽に。</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="index.html#contact" style="background:#fff;color:var(--teal);font-weight:700;padding:13px 28px;border-radius:50px;display:inline-flex;align-items:center;gap:6px">📋 問い合わせフォームへ</a>
+    <a href="tel:0700504062370" style="background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);font-weight:600;padding:13px 28px;border-radius:50px;display:inline-flex;align-items:center;gap:6px">📞 070-5046-2370</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo-sm">
+      <span>🍏</span>
+      新金岡 りんご園 ／ NPO法人 アップルフィールド
+    </div>
+    <div class="footer-links">
+      <a href="index.html">← ポータルへ戻る</a>
+      <a href="ringo-en.html">本院（百舌鳥）</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:20px auto 0;text-align:center;font-size:.78rem;color:#666;border-top:1px solid #333;padding-top:20px">
+    © 2025 NPO法人 アップルフィールド All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

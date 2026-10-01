@@ -59,6 +59,7 @@
 .orchard-home .entry-label { font-size: 12px; }
 .orchard-home .entry strong { font-size: 20px; }
 .orchard-home .circle-arrow { background: none; border: 1px solid #b5c1ae; color: var(--green); width: 42px; height: 42px; font-size: 20px; }
+.orchard-home .entry>a:hover .circle-arrow { background: var(--green); color: var(--cream); }
 .orchard-home .news-strip { border-bottom: 1px solid var(--line); gap: 20px; font-size: 13px; padding-block: 24px; }
 .orchard-home .news-strip .eyebrow { margin: 0; font-size: 12px; }
 .orchard-home .about { align-items: center; gap: 80px; }
@@ -423,3 +424,6 @@
 @media(prefers-reduced-motion:reduce) {
   .orchard-page *, .orchard-page *::before, .orchard-page *::after { animation: none!important; transition: none!important; scroll-behavior: auto!important; }
 }
+
+/* Empty diary sections and hidden controls remain hidden at every breakpoint. */
+[hidden] { display: none !important; }

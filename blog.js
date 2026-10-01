@@ -85,13 +85,17 @@
   }
   window.AppleFieldBlog = { validate, normalize, renderArticle };
   let posts = [];
-  try { posts = normalize(window.APPLE_FIELD_POSTS || []); }
+  try { posts = normalize(window.APPLE_FIELD_POSTS || []).filter(post => !post.sample); }
   catch (error) {
     for (const target of document.querySelectorAll('[data-blog-list], [data-blog-article]')) target.replaceChildren(node('p', 'note', '記事データを読み込めませんでした。'));
     return;
   }
   const list = document.querySelector('[data-blog-list]');
   if (list) {
+    const homeSection = list.closest('.blog-home');
+    if (homeSection) homeSection.hidden = posts.length === 0;
+    const toolbar = document.querySelector('.blog-toolbar');
+    if (toolbar) toolbar.hidden = posts.length === 0;
     const buttons = document.querySelectorAll('[data-blog-filter]');
     const availableCategories = new Set(posts.map(post => post.category));
     const filters = document.querySelector('.blog-filters');
@@ -103,7 +107,7 @@
       const matching = posts.filter(post => category === 'すべて' || post.category === category);
       const limit = Number(list.dataset.limit) || matching.length;
       list.replaceChildren(...matching.slice(0,limit).map(card));
-      if (!matching.length) list.append(node('p', 'blog-empty', 'このカテゴリの記事は、これからお届けします。'));
+      if (!matching.length) list.append(node('p', 'blog-empty', posts.length ? 'このカテゴリの記事は、これからお届けします。' : 'りんご園の日記は、これから少しずつお届けします。園の様子や療育については、「りんご園の療育」をご覧ください。'));
       const count = document.querySelector('[data-blog-count]');
       if (count) count.textContent = `${matching.length}件の日記`;
       buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.blogFilter === category)));
@@ -120,6 +124,15 @@
       document.title = `${post.title} | りんご園の日記`;
       const description = document.querySelector('meta[name="description"]');
       if (description) description.content = post.summary;
+      const canonical = document.querySelector('link[rel="canonical"]');
+      const articleUrl = canonical ? new URL('blog-post.html?id=' + encodeURIComponent(post.id), canonical.href).href : '';
+      if (canonical) canonical.href = articleUrl;
+      for (const [property,content] of [['og:title',document.title],['og:description',post.summary],['og:url',articleUrl]]) {
+        const meta = document.querySelector('meta[property="' + property + '"]');
+        if (meta) meta.content = content;
+      }
+      const robots = document.querySelector('meta[name="robots"]');
+      if (robots) robots.content = 'index,follow';
     } else article.replaceChildren(node('h1', '', '記事が見つかりませんでした'), node('p', '', '一覧から読みたい日記をお選びください。'));
   }
 })();

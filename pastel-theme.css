@@ -1,0 +1,193 @@
+/* Apple Field — soft mint, blossom pink and real moments. */
+.orchard-page {
+  --cream:#fffdf8; --paper:#ffffff; --green:#3f6656; --ink:#34483f;
+  --red:#995547; --red-dark:#7e4439; --muted:#626c64; --line:#dce5de;
+  --tint:#edf5ef; --mint:#e5f1e9; --blush:#f7e6e2; --butter:#fff2d4; --lilac:#eeedf6;
+  --radius:24px; background:var(--cream);
+}
+.orchard-page .header { background:var(--cream); padding-block:23px; }
+.orchard-page .brand-mark { background:#d18f7f; }
+.orchard-page .button { border-radius:100px; padding-inline:28px; }
+.orchard-page .button.outline { border-color:#a6bcaf; background:#ffffff80; }
+.orchard-page .header nav a:last-child { border-radius:100px; border-color:#c7a297; }
+.orchard-page .eyebrow { color:#536e5c; }
+.orchard-page .tinted { background:var(--mint); }
+.orchard-page .page-intro { border-bottom-color:#dce5de; padding-block:38px; }
+.orchard-page .page-intro h1 { line-height:1.7; }
+.orchard-page .breadcrumb { color:#657469; }
+.orchard-page .brand small { color:#647569; }
+.hero-stage { background:linear-gradient(115deg,#f6f5e8 0%,#eaf3e9 55%,#f8e9e3 100%); border-radius:0 0 60px 60px; }
+.orchard-home .hero { grid-template-columns:1fr 1.1fr; gap:65px; padding-block:60px 55px; }
+.orchard-home .hero h1 { font-size:clamp(37px,3.6vw,49px); line-height:1.55; }
+.orchard-home .hero h1 em { color:var(--green); background:linear-gradient(transparent 75%,#e9bdaf 75%); }
+.orchard-home .hero-opening { font-size:clamp(23px,2.2vw,29px); }
+.orchard-home .hero .eyebrow { background:#ffffffb3; border:1px solid #fff; border-radius:30px; padding:7px 15px; letter-spacing:.07em; }
+.orchard-home .hero-desc { color:#506257; margin-block:28px; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:15px 22px; align-items:center; }
+.hero-actions .text-link { font-size:13px; }
+.hero-photo-story { position:relative; margin:0; padding:0 0 82px 35px; min-width:0; }
+.hero-photo-main { display:block; width:100%; height:auto; aspect-ratio:1.05; object-fit:cover; border:9px solid #fffdf9; border-radius:100px 32px 100px 32px; box-shadow:0 18px 38px #3556420d; }
+.hero-photo-small { position:absolute; width:43%; height:auto; aspect-ratio:1.08; object-fit:cover; left:0; bottom:24px; border:7px solid #fffdf9; border-radius:28px; transform:rotate(-7deg); box-shadow:0 10px 24px #35564212; }
+.photo-tag { position:absolute; right:-8px; top:30px; writing-mode:vertical-rl; font-size:13px; letter-spacing:.18em; background:var(--butter); padding:17px 12px; border-radius:30px; }
+.hero-photo-story figcaption { position:absolute; bottom:17px; right:3px; width:50%; color:#526656; font-size:12px; line-height:1.9; }
+.orchard-ribbon { padding-bottom:26px; letter-spacing:.15em; }
+.orchard-home .entry { gap:22px; margin-top:30px; padding:0; }
+.orchard-home .entry>a,.orchard-home .entry>a+a { border:0; padding:23px 28px; border-radius:22px; background:var(--blush); }
+.orchard-home .entry>a+a { background:var(--mint); }
+.orchard-home .entry strong { font-size:19px; }
+.orchard-home .news-strip { margin-top:14px; }
+.orchard-home .about { gap:70px; }
+.orchard-home .wish-art { height:130px; }
+.orchard-home .wish-art .orchard-tree { height:130px; width:135px; }
+.orchard-home .wish-art .bear-accent { height:108px; width:108px; }
+.orchard-page .care-summary { background:#f0f5ef; border:0; }
+.orchard-page .feature { border-color:#e2e8df; border-radius:24px; padding:32px; }
+.orchard-page .feature .therapy-icon { background:#edf4ed; padding:12px; border-radius:20px; }
+.orchard-page .feature:nth-child(2) .therapy-icon { background:#f9ede6; }
+.orchard-page .feature:nth-child(3) .therapy-icon { background:var(--lilac); }
+.orchard-page .feature .number { color:#8e7168; }
+.photo-story { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:70px; }
+.photo-story figure { margin:0; }
+.photo-story figure img { width:100%; height:auto; aspect-ratio:1.15; border-radius:30px 90px 30px 30px; object-fit:cover; }
+.photo-story figcaption { color:var(--muted); margin-top:14px; font-size:12px; }
+.photo-story h2 { font-size:clamp(27px,2.7vw,36px); }
+.photo-story p { line-height:2.1; }
+.photo-story .text-link { margin-top:12px; }
+.orchard-page .therapy-art { background:var(--mint); border-radius:25px; }
+.orchard-page .therapy-detail:nth-child(2) .therapy-art { background:var(--blush); }
+.orchard-page .therapy-detail:nth-child(3) .therapy-art { background:var(--lilac); }
+.orchard-page .activity-gallery img { border-radius:24px; }
+.orchard-page .room { padding:27px; border:1px solid var(--line); background:white; border-radius:24px; }
+.orchard-page .room h3 { font-size:21px; }
+.orchard-page .room .phone { font-size:20px; }
+.orchard-page .room-profile { border-color:#d7e3d9; }
+.orchard-page .room-note { background:var(--butter); border:0; border-radius:28px; }
+.orchard-staff #profiles { background:#edf5ef; }
+.orchard-staff .staff-card { border-top-color:#cdded1; }
+.orchard-page .recruit-photo img { border-radius:80px 28px 28px 28px; border:8px solid #f5e7de; }
+.orchard-page .job-link-card { border-color:#dce5de; border-radius:23px; background:#fffefb; }
+.orchard-page .job-source { color:#577363; }
+.orchard-home .recruit-banner { background:var(--blush); color:var(--ink); border-radius:30px; }
+.orchard-home .recruit-banner h2 { color:var(--green); }
+.orchard-home .recruit-banner .eyebrow { color:#825a50; }
+.orchard-home .recruit-words { color:#6c8172; border-left-color:#d9bfb5; }
+.orchard-page .consultation-note { background:var(--butter); border-radius:28px; }
+.orchard-page .consultation-note img,.orchard-page .bear-accent { height:auto; }
+.orchard-page .contact-action .phone { border-radius:18px; background:#edf5ef; border-color:#d1dfd3; }
+.orchard-page .news-item.documents { background:#fff; border-radius:25px; }
+.orchard-page .cta { background:var(--mint); border:0; border-radius:32px; }
+.orchard-recruit .cta { background:var(--blush); border-radius:32px; }
+.orchard-page footer { background:#355b4c; }
+.orchard-page footer .brand small { color:#e1eae0; }
+.orchard-page .footer-inner>.fine { border-color:#628071; }
+.contact-options { display:flex; flex-wrap:wrap; gap:12px; margin-top:23px; }
+.contact-form-section { padding:50px; border:1px solid #e2e6df; border-radius:32px; background:#fff; margin-block:10px 70px; scroll-margin-top:25px; }
+.contact-form-head { display:grid; grid-template-columns:1fr 105px; gap:25px; align-items:center; padding-bottom:24px; }
+.contact-form-head img { width:100%; height:auto; }
+.contact-form-head h2 { margin-bottom:10px; }
+.contact-form-head p { font-size:14px; margin:0; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.form-field { display:flex; flex-direction:column; gap:8px; min-width:0; }
+.form-field.full { grid-column:1/-1; }
+.form-field label { font-size:14px; font-weight:700; }
+.required-label { display:inline-block; font-size:10px; font-weight:500; color:#8b5144; background:var(--blush); border-radius:4px; padding:1px 6px; margin-left:8px; }
+.optional-label { font-size:11px; font-weight:400; color:var(--muted); margin-left:8px; }
+.contact-form input:not([type=hidden]):not([type=checkbox]),.contact-form select,.contact-form textarea { width:100%; min-height:49px; border:1px solid #aabdaf; border-radius:10px; padding:12px 14px; font:inherit; font-size:16px; color:var(--ink); background:#fbfcf9; }
+.contact-form textarea { resize:vertical; min-height:160px; }
+.contact-form input:focus-visible,.contact-form select:focus-visible,.contact-form textarea:focus-visible { outline:3px solid #719d8a; outline-offset:2px; }
+.form-help { color:var(--muted); font-size:12px; line-height:1.8; margin:0; }
+.form-consent { margin-block:26px; background:#f2f6ef; border-radius:15px; padding:20px; }
+.form-consent p { font-size:12px; margin-bottom:14px; }
+.form-consent a,.contact-email a { text-decoration:underline; text-underline-offset:4px; }
+.form-consent label { display:flex; align-items:flex-start; gap:10px; font-size:14px; cursor:pointer; }
+.form-consent input { flex-shrink:0; width:19px; height:19px; accent-color:var(--green); margin:4px 0 0; }
+.form-buttons { display:flex; flex-wrap:wrap; align-items:center; gap:14px; }
+.form-buttons button { cursor:pointer; }
+.contact-email { border-top:1px solid var(--line); margin-top:30px; padding-top:23px; font-size:14px; overflow-wrap:anywhere; }
+.contact-email p { margin-bottom:5px; }
+.contact-email a { color:var(--green); font-weight:700; }
+.form-review { margin-block:10px 24px; }
+.form-review dl { margin:0 0 24px; }
+.form-review dl>div { border-bottom:1px solid var(--line); padding:16px 0; }
+.form-review dt { color:var(--green); font-size:12px; font-weight:700; }
+.form-review dd { margin:6px 0 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.form-review .button { border:0; }
+.form-review .button.outline { border:1px solid #a6bcaf; }
+.contact-form .honeypot { display:none; }
+.form-status { font-size:14px; color:var(--green); margin-top:18px; }
+.thanks-panel { background:var(--mint); border-radius:32px; padding:48px; margin-block:40px 70px; }
+@media(max-width:1100px) {
+  .orchard-home .hero { gap:30px; }
+  .hero-photo-story { padding-left:15px; }
+  .photo-story { gap:35px; }
+  .orchard-home .entry strong { font-size:18px; }
+  .orchard-page .room { padding:22px; }
+}
+@media(max-width:760px) {
+  .hero-stage { border-radius:0 0 32px 32px; }
+  .orchard-home .hero { grid-template-columns:1fr; padding-block:25px 16px; gap:32px; }
+  .orchard-home .hero h1 { font-size:38px; }
+  .orchard-home .hero-opening { font-size:24px; }
+  .orchard-home .hero-desc { margin-block:22px; }
+  .hero-photo-story { width:min(100%,450px); justify-self:center; padding:0 8px 74px 28px; }
+  .hero-photo-main { border-width:6px; border-radius:65px 22px 65px 22px; }
+  .hero-photo-small { border-width:5px; border-radius:20px; bottom:22px; }
+  .hero-photo-story figcaption { font-size:11px; right:0; bottom:10px; }
+  .photo-tag { right:0; top:19px; font-size:11px; padding:12px 9px; }
+  .orchard-ribbon { padding-bottom:25px; }
+  .orchard-home .entry { gap:12px; margin-top:22px; }
+  .orchard-home .entry>a,.orchard-home .entry>a+a { padding:20px 22px; border-radius:20px; }
+  .orchard-home .about { gap:24px; }
+  .orchard-page .feature { padding:27px; }
+  .photo-story { grid-template-columns:1fr; gap:25px; }
+  .photo-story figure img { aspect-ratio:1.35; border-radius:25px 65px 25px 25px; }
+  .orchard-page .room-grid { gap:18px; }
+  .orchard-page .room .phone { font-size:23px; }
+  .orchard-home .recruit-banner { padding:32px 26px; border-radius:25px; }
+  .orchard-page .cta,.orchard-recruit .cta { border-radius:25px; }
+  .contact-form-section { padding:25px 22px; border-radius:24px; margin-bottom:40px; }
+  .contact-form-head { grid-template-columns:1fr 58px; gap:15px; }
+  .contact-form-head h2 { font-size:23px; }
+  .form-grid { grid-template-columns:1fr; gap:21px; }
+  .form-field.full { grid-column:auto; }
+  .form-consent { padding:17px; }
+  .form-buttons { align-items:stretch; flex-direction:column; }
+  .form-buttons .button { justify-content:center; }
+  .thanks-panel { padding:30px 23px; }
+}
+
+/* Photoreal AI scenes: label separately from the facility's original photographs. */
+.image-credit { display:block; font-size:10px; line-height:1.7; color:#596a60; margin-top:5px; }
+.ai-photo { margin:0; min-width:0; }
+.ai-photo img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:26px; }
+.ai-photo figcaption { margin-top:10px; color:#626c64; font-size:11px; line-height:1.7; }
+.orchard-page .therapy-with-photo { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:center; gap:48px; }
+.therapy-with-photo:nth-child(2) .ai-photo img { border-radius:55px 25px 25px 25px; }
+.therapy-with-photo:nth-child(3) .ai-photo img { border-radius:25px 25px 55px 25px; }
+.orchard-page .contact-photo-intro { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:45px; }
+.contact-photo-intro h1 { font-size:clamp(27px,2.7vw,37px); }
+.contact-photo-intro .ai-photo img { border-radius:65px 25px 65px 25px; }
+@media(max-width:760px) {
+ .orchard-page .therapy-with-photo,.orchard-page .contact-photo-intro { grid-template-columns:1fr; gap:25px; }
+ .contact-photo-intro .ai-photo { margin-top:4px; }
+ .hero-photo-story figcaption { bottom:0; }
+ .image-credit { font-size:10px; margin-top:3px; }
+}
+
+/* Review fixes: consistent photos, readable text and explicit directory placement. */
+.orchard-page { --muted:#505f56; }
+.orchard-page main p { color:#43564b; }
+.orchard-page .room-profile > .note { grid-column:2 / -1; margin:18px 0 0; font-size:14px; line-height:1.9; }
+.orchard-page .room-profile-address p { font-size:15px; }
+.orchard-page .hero-photo-story { padding:0 8px 0 0; }
+.orchard-page .hero-photo-story figcaption { position:static; width:auto; margin:14px 12px 0; font-size:13px; line-height:1.8; }
+.orchard-page .image-credit,.orchard-page .ai-photo figcaption { font-size:12px; color:#505f56; }
+.orchard-page .therapy-with-photo .ai-photo img { border-radius:28px; aspect-ratio:4/3; }
+.orchard-page .therapy-with-photo p:last-child { font-size:16px; }
+.orchard-page .form-help,.orchard-page .form-consent p { font-size:13px; }
+.orchard-page .hero-note { font-size:13px; }
+@media(max-width:760px) {
+ .orchard-page .room-profile > .note { grid-column:2; margin-top:2px; }
+ .orchard-page .hero-photo-story { padding:0 8px; }
+ .orchard-page .hero-photo-story figcaption { margin:12px 4px 0; }
+}

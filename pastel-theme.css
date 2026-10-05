@@ -2,7 +2,7 @@
 .orchard-page {
   --cream:#fffdf8; --paper:#ffffff; --green:#3f6656; --ink:#34483f;
   --red:#995547; --red-dark:#7e4439; --muted:#626c64; --line:#dce5de;
-  --tint:#edf5ef; --mint:#e5f1e9; --blush:#f7e6e2; --butter:#fff2d4; --lilac:#eeedf6;
+  --tint:#edf5ef; --mint:#e5f1e9; --blush:#f7e6e2; --butter:#fff2d4;
   --radius:24px; background:var(--cream);
 }
 .orchard-page .header { background:var(--cream); padding-block:23px; }
@@ -44,7 +44,7 @@
 .orchard-page .feature { border-color:#e2e8df; border-radius:24px; padding:32px; }
 .orchard-page .feature .therapy-icon { background:#edf4ed; padding:12px; border-radius:20px; }
 .orchard-page .feature:nth-child(2) .therapy-icon { background:#f9ede6; }
-.orchard-page .feature:nth-child(3) .therapy-icon { background:var(--lilac); }
+.orchard-page .feature:nth-child(3) .therapy-icon { background:var(--butter); }
 .orchard-page .feature .number { color:#8e7168; }
 .photo-story { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:70px; }
 .photo-story figure { margin:0; }
@@ -55,7 +55,7 @@
 .photo-story .text-link { margin-top:12px; }
 .orchard-page .therapy-art { background:var(--mint); border-radius:25px; }
 .orchard-page .therapy-detail:nth-child(2) .therapy-art { background:var(--blush); }
-.orchard-page .therapy-detail:nth-child(3) .therapy-art { background:var(--lilac); }
+.orchard-page .therapy-detail:nth-child(3) .therapy-art { background:var(--butter); }
 .orchard-page .activity-gallery img { border-radius:24px; }
 .orchard-page .room { padding:27px; border:1px solid var(--line); background:white; border-radius:24px; }
 .orchard-page .room h3 { font-size:21px; }
@@ -190,4 +190,88 @@
  .orchard-page .room-profile > .note { grid-column:2; margin-top:2px; }
  .orchard-page .hero-photo-story { padding:0 8px; }
  .orchard-page .hero-photo-story figcaption { margin:12px 4px 0; }
+}
+
+/* 2026 autumn palette: larger colour fields, while keeping the text calm. */
+.orchard-page {
+  --cream:#fff8eb; --paper:#fffdf8; --green:#315b49; --ink:#34483f;
+  --red:#b94f47; --red-dark:#913b39; --line:#dccfc1;
+  --tint:#e7f1dc; --mint:#dcebdc; --blush:#f8dfd9;
+  --butter:#f9edc7;
+  background:var(--cream);
+}
+.orchard-page .header { background:#e9f2e9; box-shadow:0 1px 0 #d4e3d8; }
+.orchard-page .brand-mark { background:#d36a58; }
+.orchard-page .header nav a:last-child { background:#fff9f0; border-color:#b96b5c; }
+.orchard-page .button:not(.outline):not(.light) { background:var(--red); border-color:var(--red); }
+.orchard-page .button:not(.outline):not(.light):hover { background:var(--red-dark); }
+.orchard-page .button.outline { background:#fffbf4; }
+.orchard-page .eyebrow { color:#3d6951; }
+
+/* Home: a cheerful first impression and distinct chapters. */
+.orchard-home .hero-stage {
+  background:radial-gradient(circle at 82% 18%,#f7d08d 0,transparent 38%),
+             radial-gradient(circle at 7% 88%,#efc8dc 0,transparent 35%),
+             linear-gradient(120deg,#ffe9ce 0%,#e8f0d6 72%,#e0ecdf 100%);
+}
+.orchard-home .hero h1 em { color:#a9433c; background:linear-gradient(transparent 76%,#f1c889 76%); }
+.orchard-home .hero .eyebrow { background:#fff8e5; border-color:#f5dfbd; }
+.orchard-home .photo-tag { background:#ffdd9f; color:#4f503b; }
+.orchard-home .orchard-ribbon { color:#365f4b; }
+.orchard-home .entry>a { background:#f8dfd9; }
+.orchard-home .entry>a+a { background:#dcebdc; }
+.orchard-home .news-strip { background:#fff0d2; border:0; border-radius:18px; padding-inline:24px; margin-top:20px; }
+.orchard-home .about {
+  background:linear-gradient(135deg,#fff1dc,#fbe5dc);
+  border-radius:34px; padding-inline:58px; margin-block:50px;
+}
+.orchard-home .care-summary { background:#e4efdc; border:0; }
+.orchard-home .feature:nth-child(1) { background:#fff5df; border-color:#e9d8aa; }
+.orchard-home .feature:nth-child(2) { background:#f7e4de; border-color:#e8c8c1; }
+.orchard-home .feature:nth-child(3) { background:#fff0d3; border-color:#e8d3a5; }
+.orchard-home .feature .therapy-icon { background:#ffffffb0; }
+.orchard-home .photo-story { background:#e5f0e0; border-radius:34px; padding-inline:58px; margin-block:50px; }
+.orchard-home .room-grid .room { border:0; box-shadow:none; }
+.orchard-home .room-grid .room:nth-child(1) { background:#f7e3dd; }
+.orchard-home .room-grid .room:nth-child(2) { background:#e7eedb; }
+.orchard-home .room-grid .room:nth-child(3) { background:#f8edcc; }
+.orchard-home .recruit-banner { background:#e5efdf; }
+.orchard-home .recruit-banner h2 { color:#345b4c; }
+.orchard-home .recruit-banner .eyebrow { color:#526b52; }
+.orchard-home .cta { background:#f7dfd7; }
+
+/* Inside pages: color in the opening, alternating content, and contact areas. */
+.orchard-page:not(.orchard-home) .page-intro {
+  background:#f8e7d9; border:0; border-radius:30px;
+  padding:38px 46px; margin-top:18px;
+}
+.orchard-care .page-intro,.orchard-rooms .page-intro { background:#e4eedb !important; }
+.orchard-blog .page-intro { background:#f8e7d9 !important; }
+.orchard-news .page-intro { background:#fff0d6 !important; }
+.orchard-contact .page-intro,.orchard-staff .page-intro { background:#f8e7d9 !important; }
+.orchard-page .tinted { background:#e3eedb; }
+.orchard-care .therapy-detail:nth-child(2) { background:#f7e6db; border-radius:26px; padding-inline:28px; border:0; }
+.orchard-care .activity-gallery { background:#fff0d6; border-radius:30px; padding-inline:38px; margin-bottom:44px; }
+.orchard-rooms .room-profile { border-bottom-color:#e5d8ca; }
+.orchard-rooms .room-profile:nth-child(2) { background:#f8e8dd; border-radius:26px; padding-inline:28px; border:0; }
+.orchard-page .room-note,.orchard-page .consultation-note { background:#f9e9c9; }
+.orchard-staff #profiles { background:#e5eedf; }
+.orchard-staff .staff-card:nth-child(3n+1) { background:#fff0d6; }
+.orchard-staff .staff-card:nth-child(3n+2) { background:#f6e3dc; }
+.orchard-staff .staff-card:nth-child(3n) { background:#e4efdf; }
+.orchard-blog .blog-empty { background:#fff1d8; border-color:#e7d7b9; }
+.orchard-page .blog-card { background:#fff5e4; border-color:#e8d6b8; }
+.orchard-news .news-item.documents { background:#fff1d8; }
+.orchard-contact .contact-form-section { background:#fff3e5; border-color:#ead7c5; }
+.orchard-contact .form-consent { background:#e6eedf; }
+.orchard-page .cta { background:#f8e0d9; }
+.orchard-page footer { background:#355b4c; }
+
+@media(max-width:760px) {
+  .orchard-home .news-strip { padding:18px 20px; }
+  .orchard-home .about,.orchard-home .photo-story { padding:45px 23px; margin-block:30px; border-radius:24px; }
+  .orchard-home .feature-grid { gap:16px; }
+  .orchard-page:not(.orchard-home) .page-intro { padding:28px 23px; border-radius:22px; }
+  .orchard-care .therapy-detail:nth-child(2),.orchard-rooms .room-profile:nth-child(2) { padding-inline:18px; }
+  .orchard-care .activity-gallery { padding:38px 18px; border-radius:22px; }
 }
